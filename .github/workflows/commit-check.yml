@@ -17,6 +17,6 @@ jobs:
         shell: bash
 
       - name: Run custom commit check
-        uses: ./path-to-your-action  # Replace with the actual path to your action
+        uses: ynancher/my-commit-checker@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
