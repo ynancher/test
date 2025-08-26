@@ -20,3 +20,12 @@ jobs:
         uses: ynancher/my-commit-checker@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: true
+          branch: true
+          author-name: true
+          author-email: true
+          commit-signoff: true
+          merge-base: true
+          imperative: true
+          job-summary: true
+          char-limit: 72
