@@ -28,4 +28,5 @@ jobs:
           merge-base: true
           imperative: false
           job-summary: true
-          char-limit: 72
+          desc-char-limit: 72
+          sub-char-limit: 50
