@@ -1,4 +1,4 @@
-name: Commit Message Check
+name: Commit Check Action
 
 on:
   pull_request:
@@ -17,7 +17,7 @@ jobs:
         shell: bash
 
       - name: Run custom commit check
-        uses: ynancher/my-commit-checker@main
+        uses: qualcomm-linux-stg/commit-check-action@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           message: true
