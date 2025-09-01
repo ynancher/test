@@ -12,14 +12,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set PR number
-        run: echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
-        shell: bash
-
       - name: Run custom commit check
-        uses: qualcomm-linux-stg/commit-check-action@main
+        uses: ynancher/my-commit-checkern@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          message: true
+          repo: ${{ github.repository }}
+          pr_number: ${{ github.event.pull_request.number }}
           desc-char-limit: 72
           sub-char-limit: 50
