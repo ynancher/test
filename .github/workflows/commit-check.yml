@@ -21,12 +21,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           message: true
-          branch: true
-          author-name: true
-          author-email: true
-          commit-signoff: false
-          merge-base: true
-          imperative: false
-          job-summary: true
           desc-char-limit: 72
           sub-char-limit: 50
