@@ -1,1 +1,1 @@
-print("YASHASVI NANCHERLA")
+print("YASHASVI")
