@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Run custom commit check
         uses: ynancher/my-commit-checker@main
+        env: 
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           repo: ${{ github.repository }}
           pr_number: ${{ github.event.pull_request.number }}
