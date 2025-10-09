@@ -8,13 +8,14 @@ jobs:
   check-commits:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Run custom commit check
-        uses: ynancher/my-commit-checker@main
-        env: 
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          repo: ${{ github.repository }}
-          pr_number: ${{ github.event.pull_request.number }}
-          desc-char-limit: 72
-          sub-char-limit: 50
+steps:
+  - name: Run custom commit check
+    uses: ynancher/commit-check-action@commit-msg-check-action-branch
+    env: 
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      repo: ${{ github.repository }}
+      pr_number: ${{ github.event.pull_request.number }}
+      desc-char-limit: 72
+      sub-char-limit: 50
+      check-blank-line: true
