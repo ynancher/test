@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run custom commit check
-        uses: ynancher/commit-check-action@main
+        uses: ynancher/my-commit-checker@main
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
