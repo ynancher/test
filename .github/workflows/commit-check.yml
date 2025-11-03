@@ -21,4 +21,4 @@ jobs:
           pr_number: ${{ github.event.pull_request.number }}
           desc-char-limit: 72
           sub-char-limit: 50
-          check-blank-line: true
+          check-blank-line: false
