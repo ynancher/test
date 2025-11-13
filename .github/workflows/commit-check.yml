@@ -17,8 +17,6 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          repo: ${{ github.repository }}
-          pr_number: ${{ github.event.pull_request.number }}
           desc-char-limit: 72
           sub-char-limit: 50
           check-blank-line: true
