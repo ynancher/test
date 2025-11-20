@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run custom commit check
-        uses: qualcomm/commit-msg-check-action@main
+        uses: ynancher/commit-msg-check-action@ynancher-branch
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
