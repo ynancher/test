@@ -13,10 +13,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run custom commit check
-        uses: ynancher/my-commit-checker@main
+        uses: qualcomm/commit-msg-check-action@main
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          desc-char-limit: 72
+          body-char-limit: 72
           sub-char-limit: 50
           check-blank-line: true
