@@ -4,6 +4,11 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: write   # to create commit comments
+  statuses: write   # to create commit statuses
+  pull-requests: read
+
 jobs:
   check-commits:
     runs-on: ubuntu-latest
