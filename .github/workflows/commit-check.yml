@@ -10,7 +10,9 @@ jobs:
 
     steps:    
       - name: Run custom commit check
-        uses: ynancher/commit-msg-check-action@ynancher-test
+        uses: qualcomm/commit-msg-check-action@v1.0.0
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           body-char-limit: 72
           sub-char-limit: 50
