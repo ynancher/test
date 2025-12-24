@@ -1,21 +1,13 @@
 name: Commit Msg Check Action
-
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-
-permissions:
-  contents: write   # to create commit comments
-  statuses: write   # to create commit statuses
-  pull-requests: read
-
 jobs:
   check-commits:
     runs-on: ubuntu-latest
-
     steps:    
       - name: Run custom commit check
-        uses: qualcomm/commit-msg-check-action@v1.0.0
+        uses: ynancher/commit-msg-check-action@ynancher-test
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
