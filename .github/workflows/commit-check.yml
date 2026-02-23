@@ -19,15 +19,6 @@ jobs:
             HEAD="${{ github.event.pull_request.head.sha }}"
             echo "base=$BASE" >> "$GITHUB_OUTPUT"
             echo "head=$HEAD" >> "$GITHUB_OUTPUT"
-  
-        - name: Validate commit messages locally (no API)
-          run: |
-            BASE="${{ steps.diff.outputs.base }}"
-            HEAD="${{ steps.diff.outputs.head }}"
-            git rev-list --no-merges "$BASE..$HEAD" > commits.txt || true
-            python3 .github/scripts/check_commits_local.py \
-              --base "$BASE" --head "$HEAD" \
-              --body-limit 72 --sub-limit 50 --check-blank-line true
 
   check-commits:
     runs-on: ubuntu-latest
