@@ -3,31 +3,18 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  preflight:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v4
-          with:
-            fetch-depth: 0
-            ref: ${{ github.event.pull_request.head.sha || github.sha }}
   
-        - name: Compute base/head
-          id: diff
-          shell: bash
-          run: |
-            BASE="${{ github.event.pull_request.base.sha }}"
-            HEAD="${{ github.event.pull_request.head.sha }}"
-            echo "base=$BASE" >> "$GITHUB_OUTPUT"
-            echo "head=$HEAD" >> "$GITHUB_OUTPUT"
-
   check-commits:
     runs-on: ubuntu-latest
     steps:
-      - name: Run custom commit check
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Run custom commit check (no token)
         uses: ynancher/commit-msg-check-action@ynancher-commit-check
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           body-char-limit: 72
           sub-char-limit: 50
           check-blank-line: true
+
