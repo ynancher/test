@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run custom commit check
-        uses: ynancher/commit-msg-check-action@ynancher-test
+        uses: ynancher/commit-msg-check-action@ynancher-commit-check
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
