@@ -1,9 +1,14 @@
 name: Commit Msg Check Action
+
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: read
+
 jobs:
-  
   check-commits:
     runs-on: ubuntu-latest
     steps:
@@ -11,10 +16,12 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
       - name: Run custom commit check (no token)
         uses: ynancher/commit-msg-check-action@ynancher-commit-check
         with:
+          base: ${{ github.event.pull_request.base.sha }}
+          head: ${{ github.event.pull_request.head.sha }}
           body-char-limit: 72
           sub-char-limit: 50
           check-blank-line: true
-
