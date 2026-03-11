@@ -7,7 +7,16 @@ on:
 jobs:
   check-commits:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
       - name: Commit Check
         uses: ynancher/commit-msg-check-action@test-branch
         with:
