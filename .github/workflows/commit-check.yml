@@ -8,16 +8,9 @@ jobs:
   check-commits:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
-
       - name: Commit Check
-        uses: qualcomm-linux-stg/commit-msg-check-action@pr-17
+        uses: ynancher/commit-msg-check-action@test-branch
         with:
-          base: ${{ github.event.pull_request.base.sha }}
-          head: ${{ github.event.pull_request.head.sha }}
           body-char-limit: 72
           sub-char-limit: 50
           check-blank-line: true
