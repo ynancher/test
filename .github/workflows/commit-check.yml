@@ -18,8 +18,10 @@ jobs:
           fetch-depth: 0
 
       - name: Commit Check
-        uses: ynancher/commit-msg-check-action@test-branch
+        uses: ynancher/commit-msg-check-action@ynancher-commit-msg-check-action
         with:
+          base: ${{ github.event.pull_request.base.sha }}
+          head: ${{ github.event.pull_request.head.sha }}
           body-char-limit: 72
           sub-char-limit: 50
           check-blank-line: true
