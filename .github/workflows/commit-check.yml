@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Commit Check
-        uses: ynancher/commit-msg-check-action@ynancher-commit-msg-check-action
+        uses: qualcomm/commit-msg-check-action@v2.0.0
         with:
           base: ${{ github.event.pull_request.base.sha }}
           head: ${{ github.event.pull_request.head.sha }}
