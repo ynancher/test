@@ -2,10 +2,7 @@ name: QC Preflight Checks
 
 on:
   pull_request:
-  push:
-    branches:
-      - '**'
-  workflow_dispatch:
+    types: [opened, synchronize, reopened]
 
 jobs:
   preflight:
