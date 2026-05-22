@@ -7,7 +7,7 @@ on:
 jobs:
   preflight:
     name: Run QC Preflight Checks
-    uses: ynancher/qcom-reusable-workflows-nj/.github/workflows/reusable-qcom-preflight-checks-orchestrator.yml@commit-msg-check
+    uses: ynancher/qcom-reusable-workflows/.github/workflows/reusable-qcom-preflight-checks-orchestrator.yml@commit-msg-check
     with:
       enable-semgrep-scan: true
       enable-dependency-review: true
