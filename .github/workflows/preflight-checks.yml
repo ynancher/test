@@ -16,6 +16,7 @@ jobs:
       enable-commit-email-check: true
       enable-commit-msg-check: true
       enable-armor-checkers: false
+      commit-msg-check-extra-options: '{"strict-line-length-check": false}'
     permissions:
       contents: read
       security-events: write
