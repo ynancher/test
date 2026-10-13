@@ -26,3 +26,4 @@ jobs:
           sub-char-limit: 72
           check-blank-line: true
           strict-line-length-check: true
+          allow-empty-body: true
